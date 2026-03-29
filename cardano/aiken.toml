@@ -1,0 +1,10 @@
+name = "awali/cardano-contracts"
+version = "0.1.0"
+compiler = ">= 1.1.0"
+plutus = "v3"
+description = "Awali multi-chain liquidity protocol — Cardano smart contracts"
+
+[[dependencies]]
+name = "aiken-lang/stdlib"
+version = "v2"
+source = "github"
