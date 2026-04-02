@@ -5,7 +5,12 @@ const DEPLOYER_KEY = process.env.DEPLOYER_PRIVATE_KEY || "0267bd35f1f5d420d9cc72
 
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
-  solidity: "0.8.20",
+  solidity: {
+    version: "0.8.20",
+    settings: {
+      evmVersion: "london",
+    },
+  },
   networks: {
     // ── Ethereum ──
     sepolia: {

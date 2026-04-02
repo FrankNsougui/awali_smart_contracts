@@ -1,0 +1,1 @@
+/Users/user/Documents/DevFront/awali/smart_contracts/near/contracts/liquidity-pool/target/wasm32-unknown-unknown/release/awali_liquidity_pool.wasm: /Users/user/Documents/DevFront/awali/smart_contracts/near/contracts/liquidity-pool/src/lib.rs

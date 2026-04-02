@@ -1,0 +1,238 @@
+{
+  "preamble": {
+    "title": "awali/cardano-contracts",
+    "description": "Awali multi-chain liquidity protocol — Cardano smart contracts",
+    "version": "0.1.0",
+    "plutusVersion": "v3",
+    "compiler": {
+      "name": "Aiken",
+      "version": "v1.1.21+unknown"
+    }
+  },
+  "validators": [
+    {
+      "title": "liquidity_pool.liquidity_pool.spend",
+      "datum": {
+        "title": "datum",
+        "schema": {
+          "$ref": "#/definitions/liquidity_pool~1PoolDatum"
+        }
+      },
+      "redeemer": {
+        "title": "redeemer",
+        "schema": {
+          "$ref": "#/definitions/liquidity_pool~1PoolRedeemer"
+        }
+      },
+      "compiledCode": "59011c01010029800aba2aba1aab9faab9eaab9dab9a48888896600264653001300700198039804000cc01c0092225980099b8748008c01cdd500144c8cc8a60022b30013001300a375400513259800980118059baa0078a51899198008009bac300f30103010301030103010301030103010300d375400c44b30010018a508acc004cdc79bae3010001375c6020601c6ea800e29462660040046022002806100f2014300d300b3754005164025300a375400d300d00348896600260080051323259800980980140162c8088dd7180880098071baa0098acc004cdc3a40040051323259800980980140162c8088dd7180880098071baa0098b20184030300b300c001370e900018041baa0028b200c180380098019baa0078a4d1365640041",
+      "hash": "234df2d4b882cfa2de87a7ea7f45b929b8a852d0b185ac11f92011ee"
+    },
+    {
+      "title": "liquidity_pool.liquidity_pool.else",
+      "redeemer": {
+        "schema": {}
+      },
+      "compiledCode": "59011c01010029800aba2aba1aab9faab9eaab9dab9a48888896600264653001300700198039804000cc01c0092225980099b8748008c01cdd500144c8cc8a60022b30013001300a375400513259800980118059baa0078a51899198008009bac300f30103010301030103010301030103010300d375400c44b30010018a508acc004cdc79bae3010001375c6020601c6ea800e29462660040046022002806100f2014300d300b3754005164025300a375400d300d00348896600260080051323259800980980140162c8088dd7180880098071baa0098acc004cdc3a40040051323259800980980140162c8088dd7180880098071baa0098b20184030300b300c001370e900018041baa0028b200c180380098019baa0078a4d1365640041",
+      "hash": "234df2d4b882cfa2de87a7ea7f45b929b8a852d0b185ac11f92011ee"
+    },
+    {
+      "title": "swap_receiver.swap_receiver.spend",
+      "datum": {
+        "title": "datum",
+        "schema": {
+          "$ref": "#/definitions/swap_receiver~1SwapDatum"
+        }
+      },
+      "redeemer": {
+        "title": "redeemer",
+        "schema": {
+          "$ref": "#/definitions/swap_receiver~1SwapRedeemer"
+        }
+      },
+      "compiledCode": "59016901010029800aba2aba1aab9faab9eaab9dab9a48888896600264653001300700198039804000cdc3a400530070024888966002600460106ea800e26466453001159800980098059baa0028cc004c038c030dd500148c03cc040c040c040c040c040c040c040c04000644646600200200644b30010018a508acc004c00cdd71809000c528c4cc008008c04c00500e202298059baa0074888966002600a00314a31598009804800c4cc008dd6180198081baa00823371e0026eb8c04cc044dd5002c4cc008dd6180198081baa00823371e0026eb8c04cc044dd5002a01c40388b201498059baa0079807001a444b30013004002899192cc004c05000a00b1640486eb8c048004c03cdd5005456600260100051323259800980a00140162c8090dd7180900098079baa00a8acc004cdc3a400800515980098079baa00a801c5901045900d201a4034300c300d001370e900018049baa0038b200e180380098019baa0078a4d1365640041",
+      "hash": "124eab6e250b42ea5f5230439c7eda5a63d5ccb32818f8b42f1a1975"
+    },
+    {
+      "title": "swap_receiver.swap_receiver.else",
+      "redeemer": {
+        "schema": {}
+      },
+      "compiledCode": "59016901010029800aba2aba1aab9faab9eaab9dab9a48888896600264653001300700198039804000cdc3a400530070024888966002600460106ea800e26466453001159800980098059baa0028cc004c038c030dd500148c03cc040c040c040c040c040c040c040c04000644646600200200644b30010018a508acc004c00cdd71809000c528c4cc008008c04c00500e202298059baa0074888966002600a00314a31598009804800c4cc008dd6180198081baa00823371e0026eb8c04cc044dd5002c4cc008dd6180198081baa00823371e0026eb8c04cc044dd5002a01c40388b201498059baa0079807001a444b30013004002899192cc004c05000a00b1640486eb8c048004c03cdd5005456600260100051323259800980a00140162c8090dd7180900098079baa00a8acc004cdc3a400800515980098079baa00a801c5901045900d201a4034300c300d001370e900018049baa0038b200e180380098019baa0078a4d1365640041",
+      "hash": "124eab6e250b42ea5f5230439c7eda5a63d5ccb32818f8b42f1a1975"
+    },
+    {
+      "title": "usdc_faucet.usdc_faucet.mint",
+      "redeemer": {
+        "title": "redeemer",
+        "schema": {
+          "$ref": "#/definitions/usdc_faucet~1FaucetRedeemer"
+        }
+      },
+      "parameters": [
+        {
+          "title": "minter",
+          "schema": {
+            "$ref": "#/definitions/aiken~1crypto~1VerificationKeyHash"
+          }
+        }
+      ],
+      "compiledCode": "58e3010100229800aba2aba1aab9faab9eaab9dab9a9bae002488888896600264653001300800198041804800cdc3a400130080024888966002600460126ea800e33001375c601860146ea800e2b3001300230093754009132330010013758601a601c601c601c601c601c601c601c601c60166ea8008896600200314a115980099b8f375c601c00201314a3133002002300f0014028806a29450084c024dd50022444b300130050018acc004c034dd5003c00a2c80722b30013370e9001000c566002601a6ea801e00516403916402c8059164020300800130043754011149a26cac80101",
+      "hash": "290fb80e6d8e069e4dd9ba79e8cc2f1fafe3c25b9d3431a578d73768"
+    },
+    {
+      "title": "usdc_faucet.usdc_faucet.else",
+      "redeemer": {
+        "schema": {}
+      },
+      "parameters": [
+        {
+          "title": "minter",
+          "schema": {
+            "$ref": "#/definitions/aiken~1crypto~1VerificationKeyHash"
+          }
+        }
+      ],
+      "compiledCode": "58e3010100229800aba2aba1aab9faab9eaab9dab9a9bae002488888896600264653001300800198041804800cdc3a400130080024888966002600460126ea800e33001375c601860146ea800e2b3001300230093754009132330010013758601a601c601c601c601c601c601c601c601c60166ea8008896600200314a115980099b8f375c601c00201314a3133002002300f0014028806a29450084c024dd50022444b300130050018acc004c034dd5003c00a2c80722b30013370e9001000c566002601a6ea801e00516403916402c8059164020300800130043754011149a26cac80101",
+      "hash": "290fb80e6d8e069e4dd9ba79e8cc2f1fafe3c25b9d3431a578d73768"
+    }
+  ],
+  "definitions": {
+    "ByteArray": {
+      "dataType": "bytes"
+    },
+    "aiken/crypto/VerificationKeyHash": {
+      "title": "VerificationKeyHash",
+      "dataType": "bytes"
+    },
+    "liquidity_pool/PoolDatum": {
+      "title": "PoolDatum",
+      "description": "Pool datum — stored with each UTXO at the script address",
+      "anyOf": [
+        {
+          "title": "PoolDatum",
+          "dataType": "constructor",
+          "index": 0,
+          "fields": [
+            {
+              "title": "owner",
+              "$ref": "#/definitions/aiken~1crypto~1VerificationKeyHash"
+            },
+            {
+              "title": "pool_name",
+              "$ref": "#/definitions/ByteArray"
+            },
+            {
+              "title": "token_policy",
+              "$ref": "#/definitions/ByteArray"
+            },
+            {
+              "title": "token_name",
+              "$ref": "#/definitions/ByteArray"
+            }
+          ]
+        }
+      ]
+    },
+    "liquidity_pool/PoolRedeemer": {
+      "title": "PoolRedeemer",
+      "description": "Redeemer actions the validator can process",
+      "anyOf": [
+        {
+          "title": "Deposit",
+          "description": "Provider deposits tokens — anyone can deposit",
+          "dataType": "constructor",
+          "index": 0,
+          "fields": [
+            {
+              "title": "deposit_ref",
+              "$ref": "#/definitions/ByteArray"
+            }
+          ]
+        },
+        {
+          "title": "Withdraw",
+          "description": "Owner withdraws tokens to a destination",
+          "dataType": "constructor",
+          "index": 1,
+          "fields": [
+            {
+              "title": "withdraw_ref",
+              "$ref": "#/definitions/ByteArray"
+            }
+          ]
+        }
+      ]
+    },
+    "swap_receiver/SwapDatum": {
+      "title": "SwapDatum",
+      "anyOf": [
+        {
+          "title": "SwapDatum",
+          "dataType": "constructor",
+          "index": 0,
+          "fields": [
+            {
+              "title": "owner",
+              "$ref": "#/definitions/aiken~1crypto~1VerificationKeyHash"
+            }
+          ]
+        }
+      ]
+    },
+    "swap_receiver/SwapRedeemer": {
+      "title": "SwapRedeemer",
+      "anyOf": [
+        {
+          "title": "DepositForSwap",
+          "description": "User deposits tokens for swap — includes a unique swap identifier",
+          "dataType": "constructor",
+          "index": 0,
+          "fields": [
+            {
+              "title": "swap_uid",
+              "$ref": "#/definitions/ByteArray"
+            }
+          ]
+        },
+        {
+          "title": "ReleaseToPool",
+          "description": "Owner releases tokens to pool after processing",
+          "dataType": "constructor",
+          "index": 1,
+          "fields": [
+            {
+              "title": "ref_id",
+              "$ref": "#/definitions/ByteArray"
+            }
+          ]
+        },
+        {
+          "title": "Rescue",
+          "description": "Owner rescues stuck tokens",
+          "dataType": "constructor",
+          "index": 2,
+          "fields": []
+        }
+      ]
+    },
+    "usdc_faucet/FaucetRedeemer": {
+      "title": "FaucetRedeemer",
+      "anyOf": [
+        {
+          "title": "Mint",
+          "description": "Mint new tokens (minter only)",
+          "dataType": "constructor",
+          "index": 0,
+          "fields": []
+        },
+        {
+          "title": "Burn",
+          "description": "Burn tokens (anyone who holds them)",
+          "dataType": "constructor",
+          "index": 1,
+          "fields": []
+        }
+      ]
+    }
+  }
+}
