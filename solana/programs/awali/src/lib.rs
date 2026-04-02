@@ -1,7 +1,7 @@
 use anchor_lang::prelude::*;
 use anchor_spl::token::{self, Token, TokenAccount, Transfer, Mint, MintTo};
 
-declare_id!("AWALi11111111111111111111111111111111111111");
+declare_id!("EYaDS4eUhePsSgb5Pr31zCAiDWvcuAHoL8pqmnHtgZuM");
 
 #[program]
 pub mod awali {
@@ -25,7 +25,6 @@ pub mod awali {
     pub fn deposit(ctx: Context<Deposit>, amount: u64, deposit_ref: [u8; 32]) -> Result<()> {
         require!(amount > 0, AwaliError::ZeroAmount);
 
-        // Transfer tokens from provider to pool vault
         let cpi_accounts = Transfer {
             from: ctx.accounts.provider_token_account.to_account_info(),
             to: ctx.accounts.vault.to_account_info(),
@@ -61,7 +60,6 @@ pub mod awali {
         ];
         let signer_seeds = &[&seeds[..]];
 
-        // Transfer from vault to destination
         let cpi_accounts = Transfer {
             from: ctx.accounts.vault.to_account_info(),
             to: ctx.accounts.destination.to_account_info(),

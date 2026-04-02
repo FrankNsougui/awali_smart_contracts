@@ -1,12 +1,9 @@
-use near_sdk::borsh::{BorshDeserialize, BorshSerialize};
-use near_sdk::collections::LookupMap;
+use near_sdk::store::LookupMap;
 use near_sdk::json_types::U128;
-use near_sdk::{env, near_bindgen, AccountId, Promise, NearToken, log, require};
+use near_sdk::{env, near, AccountId, Promise, NearToken, log, require};
 use near_sdk::serde::{Deserialize, Serialize};
 
-#[near_bindgen]
-#[derive(BorshDeserialize, BorshSerialize)]
-#[borsh(crate = "near_sdk::borsh")]
+#[near(contract_state)]
 pub struct LiquidityPool {
     owner: AccountId,
     token_id: AccountId,
@@ -37,7 +34,7 @@ pub struct WithdrawEvent {
     pub withdraw_ref: String,
 }
 
-#[near_bindgen]
+#[near]
 impl LiquidityPool {
     #[init]
     pub fn new(token_id: AccountId, pool_name: String) -> Self {
@@ -60,8 +57,8 @@ impl LiquidityPool {
         require!(deposit_amount > 0, "Zero amount");
 
         // Track deposit
-        let current = self.deposits.get(&sender_id).unwrap_or(0);
-        self.deposits.insert(&sender_id, &(current + deposit_amount));
+        let current = self.deposits.get(&sender_id).copied().unwrap_or(0);
+        self.deposits.insert(sender_id.clone(), current + deposit_amount);
         self.total_deposited += deposit_amount;
 
         // Emit event
@@ -113,7 +110,7 @@ impl LiquidityPool {
     }
 
     pub fn get_deposit(&self, account_id: AccountId) -> U128 {
-        U128(self.deposits.get(&account_id).unwrap_or(0))
+        U128(self.deposits.get(&account_id).copied().unwrap_or(0))
     }
 
     pub fn get_pool_name(&self) -> String {
